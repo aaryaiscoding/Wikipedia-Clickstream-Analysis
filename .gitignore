@@ -1,0 +1,17 @@
+# Large datasets and generated output
+*.tsv.gz
+*.parquet
+clickstream_raw_parquet/
+clean/
+clean.zip
+spark-tmp/
+
+# Python environment and cache
+bda/
+.venv/
+__pycache__/
+*.pyc
+
+# Spark output and logs
+spark-warehouse/
+metastore_db/
