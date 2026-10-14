@@ -1,0 +1,75 @@
+WikiFlow — Key Performance Indicators
+
+Dataset
+- Analysis month: 2026-09
+- Internal link transition rows: 21,241,212
+- Unique source pages: 2,104,547
+- Unique destination pages: 3,126,020
+
+A1 — Top article
+- Main_Page
+- Aggregated incoming clicks: 200,627,452
+
+A1 — Traffic sources
+- other-search: 2,539,581,604
+- other-empty: 951,140,936
+- other-internal: 107,919,554
+- other-external: 35,793,454
+- other-other: 18,184,879
+
+A2 — Highest-count transition
+- Source: 2026_Asian_Games
+- Destination: 2026_Asian_Games_medal_table
+- Click count: 585,024
+
+A3 — Two-way pair example
+- Articles: 2026_Asian_Games and 2026_Asian_Games_medal_table
+- Combined directional click count: 611,906
+
+A4 — Highest estimated two-step path
+- Path: 2026_Asian_Games → 2026_Asian_Games_medal_table → India_at_the_2026_Asian_Games
+- Estimated readers: approximately 245,857
+
+Interpretation
+- These KPIs summarize the current local analysis outputs.
+- Two-step path figures are estimates based on aggregate transitions.
+- Verify figures against the final CSV files before submission.
+
+WIKIFLOW — KPI SUMMARY
+Dataset: English Wikipedia Clickstream, September 2026
+
+1. TRAFFIC SHARE BY SOURCE CATEGORY
+
+Total recorded source clicks: 3,652,620,427
+
+- Search: 2,539,581,604 clicks (69.53%)
+- Empty: 951,140,936 clicks (26.04%)
+- Internal: 107,919,554 clicks (2.95%)
+- External: 35,793,454 clicks (0.98%)
+- Other: 18,184,879 clicks (0.50%)
+
+Percentages are calculated as:
+(Source category clicks / Total recorded source clicks) × 100
+
+Note: The "other" category is retained separately rather than excluded from the calculation.
+
+2. TOPIC CLUSTERING
+
+- Clustering algorithm: Louvain community detection
+- Number of topic clusters: 651
+- Article assignments recorded: 2,538
+
+The Louvain algorithm identifies groups of articles that are strongly connected in the navigation graph. These clusters represent structural relationships between articles and should not automatically be interpreted as definitive semantic topics.
+
+3. ADDITIONAL DATASET METRICS
+
+- Total internal transition rows: 21,241,212
+- Unique source pages: 2,104,547
+- Unique destination pages: 3,126,020
+
+4. INTERPRETATION AND LIMITATIONS
+
+- Source shares describe the recorded click counts associated with each source category.
+- Clickstream transitions represent aggregate navigation counts, not individual user sessions.
+- Transitions with type="other" are candidate missing links; they are not confirmed broken or absent hyperlinks.
+- Cluster results depend on the graph construction and clustering configuration.

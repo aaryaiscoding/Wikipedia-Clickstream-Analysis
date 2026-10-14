@@ -1,0 +1,52 @@
+WikiFlow — Wikipedia Clickstream BDA
+Analysis Notes
+
+Dataset
+- Analysis month: September 2026 (2026-09).
+- Source: cleaned Wikipedia clickstream data.
+- Main cleaned dataset: clean/edges.
+- Additional datasets: clean/main_page and clean/sources.
+- Internal article transitions are identified using type = link.
+
+A1 — Article and traffic-source analysis
+- Generated the top 20 destination articles by aggregated incoming click counts.
+- Generated total click counts by source label.
+- Output files: a1_top_articles.csv, traffic_sources.csv.
+- Main_Page has the highest aggregated incoming click count in the current results.
+
+A2 — Transition analysis
+- Generated the top 20 transitions by click count.
+- Generated the top 20 transitions by probability, with n >= 1000.
+- Output files: a2_top_by_count.csv, a2_top_by_prob.csv.
+
+### A3 — Two-way article pairs and graph communities
+
+- Generated `a3_two_way.csv` with 2,000 two-way article pairs.
+- Generated `a3_clusters.csv` using Louvain community detection with NetworkX.
+- Clustering input: the graph constructed from the 2,000 selected two-way pairs, with `total_clicks` used as edge weight.
+- Output: 2,538 unique article assignments across 651 communities.
+- Community sizes range from 2 to 64 articles.
+- Limitation: these are communities in the selected subgraph, not clusters derived from the complete Wikipedia clickstream graph. Many communities are small, so topic coherence is not guaranteed.
+A4 — Estimated two-step paths
+- Generated the top 50 estimated paths using aggregated transition counts.
+- Output file: a4_paths.csv.
+- These values are estimates derived from aggregate counts. They do not represent reconstructed individual user sessions.
+
+A5 — Article subgraphs
+- Extracted incoming and outgoing internal links around four selected starting articles.
+- Output files:
+  - a5_subgraph_asian_games.csv
+  - a5_subgraph_artificial_intelligence.csv
+  - a5_subgraph_india.csv
+  - a5_subgraph_python.csv
+
+Data-quality checks
+- Cleaned data was inspected for nulls and invalid click counts.
+- Duplicate transition keys and probability normalization were checked.
+- See reports/data_quality.md and reports/graph_summary.md for the existing validation reports.
+
+Limitations
+- Clickstream counts represent aggregated transitions, not complete browsing sessions.
+- Two-step path estimates are approximate.
+- Article grouping by initial character should not be interpreted as semantic topic discovery.
+- Results should be interpreted within the scope of the supplied September 2026 dataset.
