@@ -1,9 +1,4 @@
-# Python environment and cache
-.venv/
-__pycache__/
-*.py[cod]
-
-# Raw and generated datasets
+# Large datasets and generated output
 *.tsv.gz
 *.parquet
 clickstream_raw_parquet/
@@ -11,7 +6,13 @@ clean/
 clean.zip
 demo/
 
-# Spark-generated output and metadata
+# Python environment and cache
+bda/
+.venv/
+__pycache__/
+*.py[cod]
+
+# Spark output and generated metadata
 spark-tmp/
 spark-warehouse/
 metastore_db/
@@ -19,6 +20,6 @@ metastore_db/
 ._*
 results/*_output/
 
-# Local submission bundle and OS files
+# Local artifacts
 WikiFlow_Member2_Submission.zip
 .DS_Store

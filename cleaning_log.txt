@@ -1,0 +1,11 @@
+Wikipedia Clickstream Cleaning Log
+Date: 2026-10-13
+
+Raw rows: 33,553,254
+After dropping nulls and n <= 0: 33,553,254
+Sources rows (other-*): 11,531,299
+Edges after removing self-links: 22,021,955
+Main_page rows (kept separately): 367,939
+Final edges: 21,654,016
+
+Status: Cleaning completed successfully.
