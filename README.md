@@ -3,13 +3,6 @@
 > A PySpark pipeline that turns **33.5 million** raw Wikipedia navigation records into a clean, validated navigation graph of **21.65 million** edges, then analyses it to show how readers find and move between articles.
 
 
-| Team | USN |
-|---|---|
-| Aameena Sana M | 1BI23CS003 |
-| Aarya Mishra | 1BI23CS007 |
-| Aditya Kumar | 1BI23CS018 |
-| Disha Madhusudana | 1BI23CS081 |
-
 ---
 
 ## Highlights
