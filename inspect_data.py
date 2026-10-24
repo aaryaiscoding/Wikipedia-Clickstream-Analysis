@@ -3,8 +3,11 @@ from pathlib import Path
 
 from pyspark.sql import SparkSession
 
+from bootstrap_sample_data import ensure_sample_data
+
 
 def main():
+    ensure_sample_data()
     parser = argparse.ArgumentParser(description="Inspect the cleaned WikiFlow Parquet datasets.")
     parser.add_argument(
         "--data-dir",

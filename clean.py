@@ -1,12 +1,22 @@
 
-from pyspark.sql import SparkSession, Window, functions as F
 import os
+import tempfile
+from pathlib import Path
+
+from pyspark.sql import SparkSession, functions as F
+
+from bootstrap_sample_data import ensure_sample_data
+
+ensure_sample_data()
+
+spark_dir = Path(tempfile.gettempdir()) / "wikiflow-spark"
+spark_dir.mkdir(parents=True, exist_ok=True)
 
 spark = (
     SparkSession.builder
     .appName("Clean")
     .master("local[1]")
-    .config("spark.local.dir", "/home/aarya/spark-tmp")
+    .config("spark.local.dir", str(spark_dir))
     .config("spark.sql.shuffle.partitions", "8")
     .config("spark.sql.adaptive.enabled", "true")
     .config("spark.sql.files.maxPartitionBytes", str(16 * 1024 * 1024))

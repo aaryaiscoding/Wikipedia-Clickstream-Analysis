@@ -3,8 +3,11 @@ from pathlib import Path
 
 from pyspark.sql import SparkSession, functions as F
 
+from bootstrap_sample_data import ensure_sample_data
+
 
 def main():
+    ensure_sample_data()
     parser = argparse.ArgumentParser(
         description="Find duplicate transitions in the WikiFlow edges dataset."
     )

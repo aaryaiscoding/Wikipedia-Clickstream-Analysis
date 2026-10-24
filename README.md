@@ -15,6 +15,19 @@
 - **Current events drive reading:** the 2026 Asian Games appear in the top articles, busiest link, strongest pair, top path and third-largest community.
 - **Readers follow a few strong links:** on each page, a small number of links carry most of the outgoing traffic.
 
+## Quick start
+
+On a fresh checkout, the project generates a small synthetic sample dataset if the full Wikimedia dump is not present, so the scripts can be demonstrated without downloading the full dataset.
+
+```bash
+python3 bootstrap_sample_data.py
+python3 clean.py
+python3 demo.py
+python3 graph_summary.py
+```
+
+The sample Parquet data is generated locally and is not committed. To process the real clickstream data instead, place `clickstream-enwiki-2026-09.tsv.gz` at the project root and run `python3 test.py` followed by `python3 clean.py`.
+
 ---
 
 ## System Architecture

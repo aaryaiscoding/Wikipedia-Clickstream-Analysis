@@ -1,8 +1,12 @@
 
-from pyspark.sql import SparkSession
-from pyspark.sql import functions as F
 from pathlib import Path
 import time
+
+from pyspark.sql import SparkSession, functions as F
+
+from bootstrap_sample_data import ensure_sample_data
+
+ensure_sample_data()
 
 BASE = Path("demo/edges_1pct")
 OUT = Path("demo/results")

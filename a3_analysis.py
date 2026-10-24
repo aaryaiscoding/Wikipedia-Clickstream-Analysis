@@ -2,7 +2,11 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col
 
+from bootstrap_sample_data import ensure_sample_data
+
+
 def main():
+    ensure_sample_data()
     spark = (
         SparkSession.builder
         .appName("WikiFlowA3Analysis")

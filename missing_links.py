@@ -2,6 +2,10 @@
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as F
 
+from bootstrap_sample_data import ensure_sample_data
+
+ensure_sample_data()
+
 spark = (
     SparkSession.builder
     .appName("WikiFlowMissingLinks")
