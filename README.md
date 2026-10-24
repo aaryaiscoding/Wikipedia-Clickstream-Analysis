@@ -26,7 +26,7 @@ python3 demo.py
 python3 graph_summary.py
 ```
 
-The sample Parquet data is generated locally and is not committed. To process the real clickstream data instead, place `clickstream-enwiki-2026-09.tsv.gz` at the project root and run `python3 test.py` followed by `python3 clean.py`.
+The demo writes A1-A5 CSV results to `demo/results/`, including two-way pairs and communities (A3), estimated paths (A4), and four topic subgraphs (A5). The sample Parquet data is generated locally and is not committed. To process the real clickstream data instead, place `clickstream-enwiki-2026-09.tsv.gz` at the project root and run `python3 test.py` followed by `python3 clean.py`.
 
 ---
 
